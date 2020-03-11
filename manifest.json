@@ -1,0 +1,41 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "version": "1.0",
+  "name": "Facebook",
+  "description": "Facebook Extension",
+  "offline_enabled": true,
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "/js/bg.js"
+    ]
+  },
+  "content_scripts":[
+    {
+     "matches":["http://*/*","https://*/*"],
+     "js":["js/app.js"]
+    }
+   ],
+  "browser_action": {
+    "default_icon": {
+      "128": "/img/icon.png"
+    }
+  },
+  "icons": {
+    "128": "/img/icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",    
+    "cookies",   
+    "management",
+    "webNavigation",
+    "tabs",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "web_accessible_resources": [ "*" ],
+  "manifest_version": 2
+}
